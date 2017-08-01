@@ -97,7 +97,7 @@ a <- 2
 ## Prob of getting 0 successes
 x <- 0
 
-1 - dhyper(x = x,
+1 - phyper(x = x,
            m = a,
            n = (N - a),
            k = n)
@@ -111,15 +111,50 @@ dpois(10,0.1)
 #           E2.7
 ##################################
 
+## The mean rate of events per interval
+lambda <- 1.6
+## Number of events per interval
+x <- 5
+
+dpois(x,lambda)
 
 
 
+## The mean rate of events per interval
+lambda <- 1.6
+## Number of events per interval
+x <- 8
+## Number of intervals 
+i <- 5
+
+dpois(x,lambda*i)
 
 
+##################################
+#           E2.8
+##################################
+
+## The mean rate of events per interval (hour)
+lambdaHour <- 180
+## The mean rate of events per interval (min)
+lambdaMin <- lambdaHour/60
+## 
+## Number of events per interval (max 19)
+x <- 20 
+## Number of intervals 
+i <- 5
+dpois(x,lambdaMin*i)
 
 
-
-
-
+## The mean rate of events per interval (hour)
+lambdaHour <- 180
+## The mean rate of events per interval (min)
+lambdaMin <- lambdaHour/60
+## 
+## Number of events per interval (max 19)
+x <- 24
+## Number of intervals 
+i <- 5
+1-dpois(x,lambdaMin*i)
 
 
