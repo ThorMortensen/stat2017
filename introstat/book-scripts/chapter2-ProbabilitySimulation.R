@@ -1,4 +1,4 @@
-﻿
+
 ################################################################
 ## Example: Simulation of rolling a dice
 ##
@@ -130,6 +130,9 @@ nFlips <- 10
 xSeq <- 0:nFlips
 ## Use the dbinom() function which returns the pdf, see ?dbinom
 pdfSeq <- dbinom(xSeq, size=nFlips, prob=1/2)
+dbinom(1, size=3, prob=1/2)
+pdfSeq
+dbinom(0, size=nFlips, prob=1/2)
 ## Plot the density
 plot(xSeq, pdfSeq, type="h")
 
