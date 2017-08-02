@@ -81,6 +81,17 @@ dhyper(x = x,
        n = (N - a),
        k = n)
 
+## b)
+
+## Probability of success (1%)
+p <- 0.01
+## Number of repeats
+nRepeat <- 10
+# Prob of getting 0 10 times is for 1% prob
+dbinom(0, size=nRepeat, prob=p)
+
+
+
 ##################################
 #           E2.5
 ##################################
@@ -103,8 +114,13 @@ x <- 0
            k = n)
 ## b)
 
+## Probability of success (10%)
+p <- 0.1
+## Number of repeats
+nRepeat <- 10
+# Prob of getting 0 10 times is for 1% prob
+dbinom(0, size=nRepeat, prob=p)
 
-dpois(10,0.1)
 
 
 ##################################
@@ -116,7 +132,7 @@ lambda <- 1.6
 ## Number of events per interval
 x <- 5
 
-dpois(x,lambda)
+1-ppois(x,lambda)
 
 
 
@@ -127,7 +143,7 @@ x <- 8
 ## Number of intervals 
 i <- 5
 
-dpois(x,lambda*i)
+ppois(x,lambda*i)
 
 
 ##################################
@@ -140,10 +156,10 @@ lambdaHour <- 180
 lambdaMin <- lambdaHour/60
 ## 
 ## Number of events per interval (max 19)
-x <- 20 
+x <- 19 
 ## Number of intervals 
 i <- 5
-dpois(x,lambdaMin*i)
+1-ppois(x,lambdaMin*i)
 
 
 ## The mean rate of events per interval (hour)
@@ -152,9 +168,9 @@ lambdaHour <- 180
 lambdaMin <- lambdaHour/60
 ## 
 ## Number of events per interval (max 19)
-x <- 24
+x <- 25
 ## Number of intervals 
 i <- 5
-1-dpois(x,lambdaMin*i)
+ppois(x,lambdaMin*i)
 
 
