@@ -1,11 +1,4 @@
-stdErrorOfMean <- function(dataSet){
-  stdMerror <- (sd(dataSet))/sqrt(length(dataSet))
-  cat("std-error of mean is -> ")
-  return(stdMerror)
-}
-
-
-
+source("usefulRfunctions.R")
 
 ##################################
 #           E3.1
@@ -21,24 +14,36 @@ sd(ci)
 stdErrorOfMean(ci)
 
 ##  b)
-xMean <- 3000
-xStdDiv <- 3 
 
+#Y5 ~ N(15000, 6.708)
+xMean <- 15000
+xStdDiv <- 6.708 
+x <- 15010 #15m ± 1cm --> i mm :-)
 
+2*(1-pnorm(x, mean = xMean, sd = xStdDiv))
 
+accumProbNorm_moreThan(
+  mean = 3000,
+  stdDiv = 9,
+  multiplier = 5,
+  probPlusMinus =  15010
+)
 
 ##  c)
-
+t.test(x = ci, conf.level = 0.95)
 
 ##  d)
-
+t.test(x = ci, conf.level = 0.99)
 
 ##  e)
 
 
+confIntervalData_Variance_StdDiv(ci, 0.95)
+
+
 ##  f)
 
-
+confIntervalData_Variance_StdDiv(ci, 0.99)
 
 
 
@@ -47,3 +52,21 @@ xStdDiv <- 3
 ##################################
 #           E3.2
 ##################################
+
+
+##  a)
+
+confIntervalMean(n = 16,mean = 180.05,stdDiv = 0.0959^2,conf.level = 0.90)
+
+##  b)
+
+sqrt(confIntervalVariance(varince = 0.0959^2, df = 16-1,conf.level = 0.99))
+
+
+
+
+
+
+
+
+
