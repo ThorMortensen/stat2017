@@ -55,12 +55,12 @@ confIntervalData_Variance_StdDiv(ci, 0.99)
 
 
 ##  a)
-
-confIntervalMean(n = 16,mean = 180.05,stdDiv = 0.0959^2,conf.level = 0.90)
+setNumberOfDigits(4)
+confIntervalMean(n = 16,mean = 180.05,stdDiv = 0.0959,conf.level = 0.90)
 
 ##  b)
 
-sqrt(confIntervalVariance(varince = 0.0959^2, df = 16-1,conf.level = 0.99))
+sqrt(confIntervalVariance(varince = 0.0959, df = 16-1,conf.level = 0.99))
 
 
 
