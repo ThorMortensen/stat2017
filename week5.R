@@ -42,7 +42,7 @@ sdtDiv <- 0.0959
 n <- 16
 
 oneSampleTTest(h0 = 180,
-               sampleMean = 180.05,
+               sampleMean = 180.05, 
                sdtDiv = sdtDiv,
                n = 16)
 
