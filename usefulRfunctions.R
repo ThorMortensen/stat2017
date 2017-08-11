@@ -99,6 +99,7 @@ twoSampleT_test <- function(ns, means, stdDivs){
   ## The degrees of freedom
   v <- ((vs[1]/ns[1]+vs[2]/ns[2])^2)/
     ((vs[1]/ns[1])^2/(ns[1]-1)+(vs[2]/ns[2])^2/(ns[2]-1))
+  
   pValue <- 2*(1 - pt(t_obs, df = v))
   
   cat("t-obs    -->", t_obs)

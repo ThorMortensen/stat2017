@@ -15,11 +15,9 @@ n <- 9
 
 ##  a)
 setNumberOfDigits(5)
-
-
-
-
 twoSampleT_test(9, c(meanA, meanB), c(stdDivA, stdDivB))
+
+
 
 ##  b)
 ##  c)
