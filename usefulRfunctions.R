@@ -88,6 +88,25 @@ oneSampleTTest <- function(h0, sampleMean, sdtDiv, n){
   cat("\nt-obs    --> ", t_obs)
 }
 
+twoSampleT_test <- function(ns, means, stdDivs){
+  if(length(ns) < 2){
+    ns <- c(ns,ns)
+  }
+  
+  vs <- stdDivs^2
+  
+  t_obs <- abs((means[2]-means[1])/sqrt(vs[1]/ns[1]+vs[2]/ns[2]))
+  ## The degrees of freedom
+  v <- ((vs[1]/ns[1]+vs[2]/ns[2])^2)/
+    ((vs[1]/ns[1])^2/(ns[1]-1)+(vs[2]/ns[2])^2/(ns[2]-1))
+  pValue <- 2*(1 - pt(t_obs, df = v))
+  
+  cat("t-obs    -->", t_obs)
+  cat("\ndf       -->", v)
+  cat("\np-value  -->",pValue)
+  
+}
+
 ##################################
 #           E
 ##################################
