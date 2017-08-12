@@ -1,8 +1,19 @@
+source("usefulRfunctions.R")
+
 ##################################
-#           E
+#           E4.1
 ##################################
 
+xA <- 1/2
+xB <- 1/3
+xC <- 1/5
+x <- cbind(xA,xB,xC)
+
 ##  a)
+k <- 100000
+
+simsamples <- replicate(k, rexp(10,1/26.08))
+
 ##  b)
 ##  c)
 ##  d)
