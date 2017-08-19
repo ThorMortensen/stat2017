@@ -32,8 +32,12 @@ confIntervalData_Variance_StdDiv <- function(dataSet, conf.level){
 
 
 confIntervalMean <- function(n, mean, stdDiv, conf.level){
-  c(mean + qt((1-conf.level)/2, df = n-1) * stdDiv / sqrt(n),
-    mean - qt((1-conf.level)/2, df = n-1) * stdDiv / sqrt(n))
+  t <- (qt((1-conf.level)/2, df = n-1))
+  cat("t-quantile: ", t, "\n")
+  cat("plus-minus", t * (stdDiv / sqrt(n)), "\n")
+      
+  c(mean + t * (stdDiv / sqrt(n)),
+    mean - t * (stdDiv / sqrt(n)))
 }
 
 setScientificNotation <- function(isOn){
