@@ -172,9 +172,221 @@ p <- 4
 RSS <- 593.40 
 sqrt(RSS/(n-(p+1)) )
  
- 
- 
- 
- 
- 
- 
+###############################################################################
+## 2016 may
+
+#   P(X > 10)
+
+qt(0.)
+setNumberOfDigits(6)
+
+
+n <- 1310
+std <- 272.322
+mean <- 453.279
+qt(0.975, n-1)
+  
+confIntervalMean(n = n,
+                 mean = mean,
+                 stdDiv = std,
+                 conf.level = 0.95)
+
+f <- confIntervalVariance(varince = 98996.08,
+                     df = 20-1,
+                     conf.level = 0.90)
+sqrt(f)
+
+
+f <- c(262.28, 730.55, 324.19, 421.93, 561.23, 552.96,
+       130.96, 440.82, 955.03, 257.80)
+quantile(f,type=2)
+
+qt(0.975,df=23-2)
+
+
+organic <- c(68, 72, 81, 90)
+mean(organic)
+nonOrganic <- c(432, 428, 419, 410)
+mean(nonOrganic)
+mean(organic)/  mean(nonOrganic)
+(0.184133 - 0.157407)
+
+pOrganic <- organic/nonOrganic
+pOrganic
+
+
+mean(pOrganic)
+x <- cbind(organic , nonOrganic)
+x
+prop.test(x= x ,correct=FALSE)
+
+setNumberOfDigits(7)
+
+
+chisq.test(x,   correct = FALSE)
+pchisq(4.3977, 3)
+1-pchisq(4.3977, 3)
+
+m <- c(68, 208)
+w <- c(18, 74)
+
+
+x <- cbind(m , v)
+
+l <- 18 #blocks --> personer
+k <- 3  #treatments
+
+
+twoWayMse <- function(k, l, SSE) {
+  return(SSE/((k-1)*(l-1)))
+}
+
+twoWayMse(k = k,
+          l = l,
+          SSE =  7160.3)
+
+twoWayMsbl<- function(l, SSE_BL){
+  return(SSE_BL/(l-1))
+}
+
+twoWayMsbl(l = l,
+           SSE_BL = 6003.5)
+
+twoWayFbl <- function(MS_BL, MSE){
+  return(MS_BL/MSE)
+} 
+
+twoWayFbl(MS_BL = twoWayMsbl(l = l,
+                             SSE_BL = 6003.5),
+          MSE = twoWayMse(k = k,
+                          l = l,
+                          SSE =  7160.3))
+
+(18*6003.5)/(210.6/3)
+
+(6003.5/18-210.6)/sqrt(210.6)
+
+(6003.5-210.6)^2
+
+((6003.5-210.6)^2)/(7160.3)
+
+
+(6003.5/17)/(7160.3/34)
+
+twoWayAnovaCritVal(k_colums = l,
+                   l_rows = k)
+qf(p = 0.975, df1 = 2, df2 = 34)
+
+
+qchisq(0.975, df=53)
+
+qt(0.975,df=34)
+
+
+########################################################################################
+#det gælder for 10 knapper 
+## The mean rate of events per interval (5 years)
+lambda1 <- 2
+## The mean rate of events per interval (min)
+lambda2 <- lambda1
+## 
+## Number of events per interval (max 19)
+x <- 0
+## Number of intervals 
+i <- 1*4
+ppois(x,lambda2*i)
+
+
+# 
+xMean <- 0.12
+xStdDiv <- 0.02
+#  P(X > 0.8)
+x <- 0.8
+
+setNumberOfDigits(4)
+1-pnorm(0.08, m = 0.12, sd = 0.02)
+1-pnorm(0.08, m=0.12, sd= 0.02)
+
+
+
+1 - pnorm(q=205, mean=200, sd=15)
+
+
+pnorm()
+
+f <- c(74.7,
+  74.2,
+  74.1,
+  69.6,
+  75.4,
+  76.3,
+  76.7,
+  75.6,
+  72.0,
+  74.3)
+f
+quantile(f, 0.80, type=2)
+quantile(f, type=2)
+quantile(f, c(0.995,0.05),type=2)
+confIntervalData_Variance_StdDiv(dataSet = f, conf.level = 0.95)
+confIntervalMean(n = length(f),
+                 mean = mean(f),
+                 stdDiv = sd(f))
+
+summary(f)
+sd(f)
+
+summe(f)
+
+mean(f) + c(-1, 1) * sd(f)
+
+qnorm(0.)
+
+t.test(f, h)
+2*(1-pt(4.29/(2.115/sqrt(10)), 9))
+2*(1-pnorm(70/(2.115/sqrt(10))))
+(1-pt(-4.29/(2.115/sqrt(9)), 10))
+1-pnorm(-4.29/(2.115/sqrt(10)))
+1-qt(2.115/4.29, 9)
+mean(f)-70
+
+
+
+
+power.t.test(delta = 1, power = 0.8, sd=2.115, sig.level = 0.05,
+             type = "one.sample")
+stdErrorOfMean(f)
+((qnorm(0.975)*sd(f))/1)^2
+
+
+qnorm(0.975)
+
+
+x1 <- c(74.7, 74.2, 74.1, 69.6, 75.4, 76.3, 76.7, 75.6, 72.0, 74.3)
+x2 <- c(79.6, 77.5, 82.5, 76.7, 78.2, 76.7, 76.6, 78.1, 79.2)
+
+t.test(x2, x1, conf.level = 0.99)
+
+235.0667 265.8667 10%
+232.4667 269.0667 5%
+227.4667 275.3333 1%
+
+
+qt(0.975, )
+
+0.989/25
+
+(27+2)/(32+4)
+
+
+
+
+## The data table
+tbl <- matrix(c(27, 20, 13, 2, 22, 3, 4, 11, 12), nrow = 3)
+rownames(tbl) <- c("Bil", "Cykel", "TogElBus")
+colnames(tbl) <- c("Bil", "Cykel", "TogElBus")
+tbl
+
+chisq.test(tbl, correct = FALSE)
+
+

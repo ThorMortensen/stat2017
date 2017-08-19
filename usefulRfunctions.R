@@ -31,7 +31,7 @@ confIntervalData_Variance_StdDiv <- function(dataSet, conf.level){
 }
 
 
-confIntervalMean <- function(n, mean, stdDiv, conf.level){
+confIntervalMean <- function(n, mean, stdDiv, conf.level= 0.95){
   t <- (qt((1-conf.level)/2, df = n-1))
   cat("t-quantile: ", t, "\n")
   cat("plus-minus", t * (stdDiv / sqrt(n)), "\n")
